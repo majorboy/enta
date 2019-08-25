@@ -8,4 +8,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %nav.blue.darken-4
+      .nav-wrapper
+        .brand-logo.center En-Ta
+        %ul#nav-mobile.right.hide-on-med-and-down
+          %li<
+            %a 投稿する
+          %li<
+            %a マイページ
+          %li<
+            %a ログイン
     = yield
