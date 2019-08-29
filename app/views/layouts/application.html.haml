@@ -10,7 +10,8 @@
   %body
     %nav.blue.darken-3
       .nav-wrapper
-        .brand-logo.center En-Ta
+        .brand-logo.center 
+          = link_to 'En-Ta', root_path
         %ul#nav-mobile.right.hide-on-med-and-down
           %li<
             = link_to '投稿する', new_post_path
