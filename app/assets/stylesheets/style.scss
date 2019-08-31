@@ -1,5 +1,9 @@
 nav {
+  left:0;
   height: 60px;
+  top:0;
+  width:100%;
+  z-index:24;
   position: fixed;
 }
 .contents.row {
@@ -10,11 +14,13 @@ nav {
     max-width: 900px;
     height: calc(100% - 60px);
     padding-top: 60px;
+    overflow: scroll; 
+    .card {
+      margin-top: 50px;
+      position: relative;    
+    }
 }
 
-.post-form {
-  overflow: scroll;
-}
 #post_name:focus {
   outline: 0;
   border-bottom: 1px solid #9e9e9e;
