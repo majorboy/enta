@@ -6,6 +6,16 @@
     max-width: 900px;
 }
 
+#post_name:focus {
+  outline: 0;
+  border-bottom: 1px solid #9e9e9e;
+  box-shadow: none;
+}
+
+.post-form__input:focus{
+  outline: 0;
+}
+
 input[type="submit"] {
   color: white;
   width: 100%;
