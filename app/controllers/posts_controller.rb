@@ -3,12 +3,24 @@ class PostsController < ApplicationController
     @posts = Post.order('created_at DESC').page(params[:page]).per(9)
   end
 
+  def show
+  end
+
   def new
     @post = Post.new
   end
 
+  def edit
+  end
+
   def create
     Post.create(post_params)
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private
