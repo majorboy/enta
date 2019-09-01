@@ -6,6 +6,7 @@ nav {
   z-index:24;
   position: fixed;
 }
+
 .contents.row {
     width: 100%;
     margin-left: auto;
@@ -16,8 +17,8 @@ nav {
     padding-top: 60px;
     overflow: scroll; 
     .card {
-      margin-top: 50px;
-      position: relative;    
+      display: flex;
+      margin-top: 50px; 
     }
 }
 
@@ -38,4 +39,11 @@ input[type="submit"] {
   padding: 10px;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(21, 101, 192);
+  position: relative;
 }

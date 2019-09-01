@@ -1,28 +1,30 @@
 .contents.row
   - @posts.each do |post|
-    .card.blue-grey
-      .card-content.white-text
-        .card-title.center 本日の学習記録
-        .date 日付
-        = post.created_at.strftime("%Y/%m/%d %H:%M")
-        %br
-        %br
-        .user-name ユーザー名
-        = post.name 
-        %br 
-        %br
-        .have-done 今日の学習内容
-        = simple_format(post.have_done)
-        %br
-        .to-do 明日以降の予定
-        = simple_format(post.to_do)
-        %br
-        .comment コメント
-        = simple_format(post.comment) 
-        %br
-      .card-action
-        = link_to 'コメントする'
-        = link_to '編集'
-        = link_to '削除'
-  
-  
+    .flex
+      .col.s12.m4
+        .card
+          .card-content.black-text.lime.lighten-4
+            .card-title.center 学習Memo
+            .date 日付
+            = post.created_at.strftime("%Y/%m/%d %H:%M")
+            %br
+            %br
+            .user-name ユーザー名
+            = post.name 
+            %br 
+            %br
+            .have-done 今日の学習内容
+            = simple_format(post.have_done)
+            %br
+            .to-do 明日以降の予定
+            = simple_format(post.to_do)
+            %br
+            .comment コメント
+            = simple_format(post.comment) 
+            %br
+            .card-action
+              = link_to 'コメントする'
+              = link_to '編集'
+              = link_to '削除'
+%footer.pagination
+  = paginate(@posts)
