@@ -1,6 +1,6 @@
 .contents.row
   - @posts.each do |post|   
-    .col.s12.m4
+    .col2.s12.m4
       .card
         .card-content.black-text.lime.lighten-4
           .card-title.center 学習Memo
@@ -25,5 +25,6 @@
             = link_to 'コメントする',post_path(post)
             = link_to '編集', edit_post_path(post)
             = link_to '削除', post, method: :delete, data: { confirm: "学習memoを削除します。よろしいですか？"}
+
 %footer.pagination
   = paginate(@posts)
