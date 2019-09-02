@@ -13,11 +13,17 @@
         .brand-logo.center 
           = link_to 'En-Ta', root_path
         %ul#nav-mobile.right.hide-on-med-and-down
-          %li<
-            = link_to '投稿する', new_post_path
-          %li<
-            %a マイページ
-          %li<
-            %a ログイン
+          - if user_signed_in? 
+            %li<
+              = link_to '投稿する', new_post_path
+            %li<
+              %a マイページ
+            %li 
+              = link_to 'ログアウト',destroy_user_session_path, method: :delete
+          - else
+            %li<
+              = link_to 'ログイン', new_user_session_path, class: 'post'
+            %li<
+              = link_to '新規登録', new_user_registration_path, class: 'post'
     = yield
     
