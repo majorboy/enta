@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    Post.create(name: post_params[:name], have_done:post_params[:have_done],to_do: post_params[:to_do], comment: post_params[:comment], user_id: current_user.id )
   end
 
   def update
