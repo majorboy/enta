@@ -9,11 +9,6 @@
       = f.label :password
       %br/
       = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
-      .field
-        = f.label :remember_me
-        = f.check_box :remember_me
-        %br/
-    .actions
-      %button.btn.waves-effect.waves-light.center
-        = f.submit "Log in"
+
+    .btn.waves-effect.waves-light
+      = f.submit "Log in"

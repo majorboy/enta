@@ -19,8 +19,16 @@ nav {
     .card {
       margin-top: 50px; 
     }
-    .actions {
-      
+
+    .field {
+      outline: 0;
+      box-shadow: none;
+    }
+    
+    .btn {
+    background-color: #1565C0;
+    display: table-cell;
+    text-align: center;
     }
 }
 
