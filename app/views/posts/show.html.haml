@@ -22,7 +22,7 @@
   .comment_form
     - if current_user
       = form_tag("/posts/#{@post.id}/comments", method: :post) do
-        %textarea{:cols => "20", :name => "text", :placeholder => "コメントする", :rows => "5",class: "comment"}
+        %textarea{ cols: "20", name: "text", placeholder: "コメントする", rows: "5", class: "comment"}
         %input{:type => "submit", :value => "SENT", class: "btn comment"}
   
   .comments 
