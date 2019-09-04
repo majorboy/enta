@@ -1,5 +1,9 @@
-.contents.row
-  - @posts.each do |post|   
+.contents.row 
+  %br
+  %h5
+    #{@name}さんの投稿一覧
+  
+  - @posts.each do |post|
     .col.s12
       .card
         .card-content.black-text.lime.lighten-4
@@ -9,7 +13,7 @@
           %br
           %br
           .user-name ユーザー名
-          = post.user.name
+          = post.name 
           %br 
           %br
           .have-done 今日の学習内容
@@ -19,13 +23,13 @@
           = simple_format(post.to_do)
           %br
           .comment コメント
-          = simple_format(post.comment) 
+          = simple_format(post.comment)
           %br
           .card-action
-            = link_to 'コメントする',post_path(post)
-            - if user_signed_in? && current_user.id == post.user_id
-              = link_to '編集', edit_post_path(post)
-              = link_to '削除', post, method: :delete, data: { confirm: "学習memoを削除します。よろしいですか？"}
+            = link_to 'コメントページ',post_path(post)
+            = link_to '編集', edit_post_path(post)
+            = link_to '削除', post, method: :delete, data: { confirm: "学習memoを削除します。よろしいですか？"}
 
 %footer.pagination
   = paginate(@posts)
+

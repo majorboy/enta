@@ -17,7 +17,7 @@
             %li<
               = link_to '投稿する', new_post_path
             %li<
-              %a マイページ
+              = link_to 'マイページ', user_path(current_user)
             %li 
               = link_to 'ログアウト',destroy_user_session_path, method: :delete
           - else

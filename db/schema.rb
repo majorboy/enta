@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_09_04_103923) do
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "have_done"
     t.text "to_do"
