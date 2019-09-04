@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(name: post_params[:name], have_done:post_params[:have_done],to_do: post_params[:to_do], comment: post_params[:comment], user_id: current_user.id )
+    Post.create(have_done: post_params[:have_done],to_do: post_params[:to_do], comment: post_params[:comment], user_id: current_user.id )
   end
 
   def update
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:name, :have_done, :to_do, :comment)
+    params.require(:post).permit(:have_done, :to_do, :comment)
   end
 
   def move_to_index
