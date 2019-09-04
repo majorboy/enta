@@ -1,32 +1,6 @@
 .contents.row
   - @posts.each do |post|   
-    .col.s12
-      .card
-        .card-content.black-text.lime.lighten-4
-          .card-title.center 学習Memo
-          .date 日付
-          = post.created_at.strftime("%Y/%m/%d %H:%M")
-          %br
-          %br
-          .user-name ユーザー名
-          = post.user.name
-          %br 
-          %br
-          .have-done 今日の学習内容
-          = simple_format(post.have_done)
-          %br
-          .to-do 明日以降の予定
-          = simple_format(post.to_do)
-          %br
-          .comment コメント
-          = simple_format(post.comment) 
-          %br
-          - if user_signed_in?
-            .card-action
-              = link_to 'コメントする',post_path(post)
-              - if current_user.id == post.user_id
-                = link_to '編集', edit_post_path(post)
-                = link_to '削除', post, method: :delete, data: { confirm: "学習memoを削除します。よろしいですか？"}
+    = render partial: "post", locals: {post:post}
 
 %footer.pagination
   = paginate(@posts)
