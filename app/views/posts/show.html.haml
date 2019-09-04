@@ -16,6 +16,21 @@
         %br
         .to-do 明日以降の予定
         = simple_format(@post.to_do)
-        %br
         .comment コメント
         = simple_format(@post.comment) 
+  
+  .comment_form
+    - if current_user
+      = form_tag("/posts/#{@post.id}/comments", method: :post) do
+        %textarea{:cols => "20", :name => "text", :placeholder => "コメントする", :rows => "5",class: "comment"}
+        %input{:type => "submit", :value => "SENT", class: "btn comment"}
+  
+  .comments 
+    %h6 コメント一覧
+    - if @comments 
+      - @comments.each do |comment|
+        %p 
+          %strong 
+            = link_to comment.user.name, "/users/#{comment.user_id}"
+            ：
+          = comment.text
