@@ -1,5 +1,24 @@
 @import url(https://fonts.googleapis.com/earlyaccess/sawarabigothic.css);
 
+$black: #292929;
+$lightGray: #f5f5f3;
+$white: white;
+
+//mixin
+
+@mixin boxBase($margin: 30px auto, $padding: 10px) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin baseMargin($margin: 10px auto) {
+  margin: $margin;
+}
+
+body,html {
+  background-color: $lightGray;
+}
+
 nav {
   left:0;
   height: 60px;
@@ -59,4 +78,15 @@ input[type="submit"] {
   text-align: center;
   background-color: rgb(21, 101, 192);
   position: relative;
+}
+
+.success {
+  @include boxBase(20px 0 ,30px);
+  box-shadow: 0 0 10px rgba($black,0.2);
+  background-color: $white;
+  box-sizing: border-box;
+  text-align: center;
+  h3 {
+    @include baseMargin;
+  }
 }
